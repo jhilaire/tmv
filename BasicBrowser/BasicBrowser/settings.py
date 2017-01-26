@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'snowballing.apps.SnowballingConfig',
     'scoping.apps.ScopingConfig',
     'tmv_app.apps.TmvAppConfig',
     'django.contrib.admin',
@@ -88,7 +89,7 @@ DATABASES = {
 #    }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tmv_app',
+        'NAME': 'tmv_app_snowball',
         'USER': 'tmv',
         'PASSWORD': 'topicmodels',
         'HOST': 'localhost',

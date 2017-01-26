@@ -22,12 +22,15 @@ def add_doc(r):
     except:
         doc = Doc(UT=r['UT'])
         doc.title=get(r,'TI')
-        doc.content=get(r,'AB')
+        ab = get(r,'AB').split('(C)')[0].split('(c)')[0]
+        doc.content=ab
         doc.PY=get(r,'PY')
         doc.save()
         doc.query.add(q)
         article = WoSArticle(doc=doc)
         for field in r:
+            if field=='AB':
+                r[field] = r[field].split('(C)')[0].split('(c)')[0]
             f = field.lower()
             try:
                 article.f = r[field]

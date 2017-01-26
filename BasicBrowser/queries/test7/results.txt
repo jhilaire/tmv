@@ -1,0 +1,102 @@
+﻿FN Thomson Reuters Web of Science™
+VR 1.0
+PT J
+AU Parmesan, C
+   Yohe, G
+AF Parmesan, C
+   Yohe, G
+TI A globally coherent fingerprint of climate change impacts across natural
+   systems
+SO NATURE
+LA English
+DT Article
+ID EGG-LAYING TRENDS; BRITISH BUTTERFLIES; PHENOLOGY; PLANTS; RESPONSES;
+   BIRDS; TIME; TEMPERATURE; ABUNDANCE; MOUNTAIN
+AB Causal attribution of recent biological trends to climate change is complicated because non-climatic influences dominate local, short-term biological changes. Any underlying signal from climate change is likely to be revealed by analyses that seek systematic trends across diverse species and geographic regions; however, debates within the Intergovernmental Panel on Climate Change (IPCC) reveal several definitions of a 'systematic trend'. Here, we explore these differences, apply diverse analyses to more than 1,700 species, and show that recent biological trends match climate change predictions. Global meta-analyses documented significant range shifts averaging 6.1 km per decade towards the poles ( or metres per decade upward), and significant mean advancement of spring events by 2.3 days per decade. We define a diagnostic fingerprint of temporal and spatial 'sign-switching' responses uniquely predicted by twentieth century climate trends. Among appropriate long-term/large-scale/multi-species data sets, this diagnostic fingerprint was found for 279 species. This suite of analyses generates 'very high confidence' (as laid down by the IPCC) that climate change is already affecting living systems.
+C1 Univ Texas, Patterson Labs 141, Austin, TX 78712 USA.
+   Wesleyan Univ, Publ Affairs Ctr 238, Middletown, CT 06459 USA.
+RP Parmesan, C (reprint author), Univ Texas, Patterson Labs 141, Austin, TX 78712 USA.
+EM parmesan@mail.utexas.edu
+CR Ahas R, 1999, INT J BIOMETEOROL, V42, P119, DOI 10.1007/s004840050094
+   AKSENOV SV, 2002, MATH PACKAGE CONFIDE
+   Asher J, 2001, MILLENNIUM ATLAS BUT
+   Beaugrand G, 2002, SCIENCE, V296, P1692, DOI 10.1126/science.1071329
+   BEEBEE TJC, 1995, NATURE, V374, P219, DOI 10.1038/374219a0
+   Bradley NL, 1999, P NATL ACAD SCI USA, V96, P9701, DOI 10.1073/pnas.96.17.9701
+   Crick HQP, 1999, NATURE, V399, P423, DOI 10.1038/20839
+   Crick HQP, 1997, NATURE, V388, P526, DOI 10.1038/41453
+   de Jong PW, 1998, P ROY SOC B-BIOL SCI, V265, P39
+   Dennis R. L. H., 1993, BUTTERFLIES CLIMATE
+   Dunn PO, 1999, P ROY SOC B-BIOL SCI, V266, P2487
+   Easterling DR, 2000, SCIENCE, V289, P2068, DOI 10.1126/science.289.5487.2068
+   Fitter AH, 2002, SCIENCE, V296, P1689, DOI 10.1126/science.1071617
+   GATTER W, 1992, J ORNITHOL, V133, P427, DOI 10.1007/BF01640470
+   Gibbs JP, 2001, CONSERV BIOL, V15, P1175, DOI 10.1046/j.1523-1739.2001.0150041175.x
+   GRABHERR G, 1995, ECOL STU AN, V113, P167
+   GRABHERR G, 1994, NATURE, V369, P448, DOI 10.1038/369448a0
+   Gurevitch J, 2001, DESIGN ANAL ECOLOGIC, P347
+   Henriksen HJ, 1982, BUTTERFLIES SCANDINA
+   HERSTEINSSON P, 1992, OIKOS, V64, P505, DOI 10.2307/3545168
+   Hoegh-Guldberg O, 1999, MAR FRESHWATER RES, V50, P839, DOI 10.1071/MF99078
+   Holbrook SJ, 1997, ECOL APPL, V7, P1299
+   JOHNSON JR, 1994, CENTURY AVIFAUNAL CH
+   Kullman L, 2001, AMBIO, V30, P72, DOI 10.1639/0044-7447(2001)030[0072:CCWATL]2.0.CO;2
+   Lomborg Bjorn, 2001, SKEPTICAL ENV
+   MacArthur R.H., 1972, GEOGRAPHICAL ECOLOGY
+   McCleery RH, 1998, NATURE, V391, P30, DOI 10.1038/34073
+   Menzel A, 1999, NATURE, V397, P659, DOI 10.1038/17709
+   Menzel A, 2001, GLOBAL CHANGE BIOL, V7, P657, DOI 10.1046/j.1365-2486.2001.00430.x
+   Menzel A, 2000, INT J BIOMETEOROL, V44, P76, DOI 10.1007/s004840000054
+   MOSS RH, 2000, CROSS CUTTING ISSUES
+   Ottersen G, 2001, OECOLOGIA, V128, P1, DOI 10.1007/s004420100655
+   Parmesan C, 1999, NATURE, V399, P579, DOI 10.1038/21181
+   Parmesan C, 1996, NATURE, V382, P765, DOI 10.1038/382765a0
+   Parmesan C, 2000, B AM METEOROL SOC, V81, P443, DOI 10.1175/1520-0477(2000)081<0443:IOEWAC>2.3.CO;2
+   PAYETTE S, 1989, NATURE, V341, P429, DOI 10.1038/341429a0
+   Penuelas J, 2001, SCIENCE, V294, P793, DOI 10.1126/science.1066860
+   Peters R.L., 1992, GLOBAL WARMING BIOL
+   Pounds JA, 1999, NATURE, V398, P611, DOI 10.1038/19297
+   Pounds JA, 2001, NATURE, V410, P639, DOI 10.1038/35070683
+   Rodriguez-Trelles F, 1998, EVOL ECOL, V12, P829, DOI 10.1023/A:1006546616462
+   ROSS MS, 1994, ECOL APPL, V4, P144, DOI 10.2307/1942124
+   Roy DB, 2000, GLOB CHANGE BIOL, V6, P407, DOI 10.1046/j.1365-2486.2000.00322.x
+   Rusterholz HP, 1998, OECOLOGIA, V113, P341, DOI 10.1007/s004420050385
+   Sagarin RD, 1999, ECOL MONOGR, V69, P465, DOI 10.1890/0012-9615(1999)069[0465:CRCIAI]2.0.CO;2
+   SCHNEIDER SH, 1993, BIOTIC INTERACTIONS
+   Smith RC, 1999, BIOSCIENCE, V49, P393, DOI 10.2307/1313632
+   SMITH RIL, 1994, OECOLOGIA, V99, P322, DOI 10.1007/BF00627745
+   SOUTHWARD AJ, 1995, J THERM BIOL, V20, P127, DOI 10.1016/0306-4565(94)00043-I
+   Sturm M, 2001, NATURE, V411, P546, DOI 10.1038/35079180
+   Thomas CD, 1999, NATURE, V399, P213, DOI 10.1038/20335
+   Thomas CD, 2001, NATURE, V411, P577, DOI 10.1038/35079066
+   van Herk CM, 2002, LICHENOLOGIST, V34, P141, DOI 10.1006/lich.2002.0378
+   Walther GR, 2002, NATURE, V416, P389, DOI 10.1038/416389a
+   Warren MS, 2001, NATURE, V414, P65, DOI 10.1038/35102054
+   WILLIAMSON K, 1975, BIRD STUDY, V22, P143
+NR 56
+TC 3885
+Z9 4123
+U1 363
+U2 3615
+PU NATURE PUBLISHING GROUP
+PI LONDON
+PA MACMILLAN BUILDING, 4 CRINAN ST, LONDON N1 9XW, ENGLAND
+SN 0028-0836
+J9 NATURE
+JI Nature
+PD JAN 2
+PY 2003
+VL 421
+IS 6918
+BP 37
+EP 42
+DI 10.1038/nature01286
+PG 6
+WC Multidisciplinary Sciences
+SC Science & Technology - Other Topics
+GA 631JY
+UT WOS:000180165500029
+PM 12511946
+ER
+
+EF
