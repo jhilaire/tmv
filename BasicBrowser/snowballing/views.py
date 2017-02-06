@@ -22,15 +22,99 @@ def super_check(user):
 
 @login_required
 def index(request):
-  template = loader.get_template('snowballing/index.html')
-  queries  = sb_Query.objects.all().order_by('-id')
-  query    = queries.last()
+  template        = loader.get_template('snowballing/index.html')
+  sb_sessions     = sb_SnowballingSession.objects.all().order_by('-id')
+  sb_session_last = sb_sessions.last()
   context = {
-    'queries': queries,
-    'query': query
+    'sb_sessions': sb_sessions,
+    'sb_session_last': sb_session_last
   }
   return HttpResponse(template.render(context, request))
 
+
+#########################################################
+## Start snowballing
+import subprocess
+import sys
+@login_required
+def start_snowballing(request):
+
+  # Get information entered by user
+  sbs_name = request.POST['sbs_name']
+  sbs_IPs  = request.POST['sbs_initialpearls']
+
+  cur_ts   = timezone.now()
+
+  # create a new query record in the database
+  q1 = sb_SnowballingSession(
+    name          = sbs_name,
+    intial_pearls = sbs_IPs,
+    date          = cur_ts,
+    step_count    = 1,
+    users         = request.user,
+    completed     = 0,
+    steps         = [sb_Step.objects.get(stepid='1', date=cur_ts)]
+  )
+  q1.save()
+
+  # crate first step
+  q2 = sb_Step(
+    stepid     = '1',
+    date       = cur_ts,
+    session    = sb_SnowballingSession.objects.get(name=sbs_name, date=cur_ts),
+    users      = request.user,
+    step_count = 1
+  )
+  q2.save()
+
+  # create citation and reference queries
+  q3_ref = sb_Query(
+    title = 'sbs_'+sbs_name+'_Step1_ref',
+    text  = sbs_IPs,
+    date  = cur_ts,
+    type  = sb_QueryType.objects.get(name='reference'),
+    step  = sb_Step.objects.get(stepid='1', date=cur_ts)
+  )
+  q3_ref.save()
+  q3_cit = sb_Query(
+    title = 'sbs_'+sbs_name+'_Step1_cit',
+    text  = sbs_IPs,
+    date  = cur_ts,
+    type  = sb_QueryType.objects.get(name='citation'),
+    step  = sb_Step.objects.get(stepid='1', date=cur_ts)
+  )
+  q3_cit.save()
+
+  # Start reference query
+
+  # Start citation query 
+  #subprocess.Popen(["scrapeQuery.py", fname])
+
+  return HttpResponseRedirect(reverse('snowballing:do_snowballing', kwargs={'sbsid': q.id}))
+
+#########################################################
+## Perform snowballing
+import subprocess
+import sys
+@login_required
+def do_snowballing(request):
+
+  # Load template 
+  template = loader.get_template('snowballing/snowballing.html')
+
+  # Get snowballing session information from database
+  sbs = sb_SnowballingSession.objects.filter(id=sbsid,users=user)
+
+  context = {
+    'sbs': sbs
+  }
+
+  # Start reference query
+
+  # Start citation query
+  #subprocess.Popen(["scrapeQuery.py", fname])
+
+  return HttpResponse(template.render(context, request))
 
 #########################################################
 ## Do the query

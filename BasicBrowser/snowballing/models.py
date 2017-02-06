@@ -3,89 +3,57 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class sb_Snowball(models.Model):
-  name       = models.TextField(null=True, unique=True, verbose_name="SB Name")
-  iniPearls  = models.TextField(null=True,              verbose_name="SB Initial Pearls") 
-  date       = models.DateTimeField(                    verbose_name="SB Date") 
-  step_count = models.IntegerField(null=True,           verbose_name="SB Step Count")
-  completed  = models.BooleanField(verbose_name="Is SB Completed?")
-  users      = models.ManyToManyField(User)
-  steps      = models.ManyToManyField('sb_Step')
+class sb_SnowballingSession(models.Model):
+  name           = models.TextField(null=True, unique=True, verbose_name="SB Name")
+  initial_pearls = models.TextField(null=True,              verbose_name="SB Initial Pearls") 
+  date           = models.DateTimeField(                    verbose_name="SB Date") 
+  step_count     = models.IntegerField(null=True,           verbose_name="SB Step Count")
+  completed      = models.BooleanField(verbose_name="Is SB Completed")
+  users          = models.ManyToManyField(User)
   
   def __str__(self):
     return self.name
 
 class sb_Step(models.Model):
   stepid     = models.TextField(null=True, unique=True, verbose_name="SB Step ID")
-  date       = models.DateTimeField(                    verbose_name="SB Date")
-  refS_count = models.IntegerField(null=True,           verbose_name="SB Reference search count")
-  citS_count = models.IntegerField(null=True,           verbose_name="SB Citations search count")
+  date       = models.DateTimeField(                    verbose_name="SB Step Date")
+  session    = models.ForeignKey('sb_SnowballingSession') 
   users      = models.ManyToManyField(User)
+  step_count = models.IntegerField(null=True,           verbose_name="SB Step count")
 
   def __str__(self):
     return self.stepid
 
 
 class sb_Query(models.Model):
-  title    = models.TextField(null=True, unique=True, verbose_name="Query Title")
-  text     = models.TextField(null=True,              verbose_name="Query Text")
-  date     = models.DateTimeField(                    verbose_name="Query Date")
-  r_count  = models.IntegerField(null=True,           verbose_name="Query Results Count")
+  title    = models.TextField(null=True, unique=True, verbose_name="SB Query Title")
+  text     = models.TextField(null=True,              verbose_name="SB Query Text")
+  date     = models.DateTimeField(                    verbose_name="SB Query Date")
   users    = models.ManyToManyField(User)
-  criteria = models.TextField(null=True)
+  type     = models.ForeignKey('sb_QueryType')
+  step     = models.ForeignKey('sb_Step')
 
   def __str__(self):           
     return self.title+' ('+self.date.strftime('%Y/%m/%d - %H:%M:%S')+'): '+self.text
 
-class sb_Tag(models.Model):
-  title = models.TextField(null=True,             verbose_name="Tag Title")
-  text  = models.TextField(null=True,             verbose_name="Tag Text")
-  query = models.ForeignKey('sb_Query',null=True, verbose_name="TagQuery")
+class sb_QueryType(models.Model):
+  name = models.TextField(null=True, unique=True, verbose_name="SB Query type name")
 
   def __str__(self):
-    return self.title
+    return self.name
 
 class sb_Doc(models.Model):
   UT      = models.CharField(max_length=30,db_index=True,primary_key=True)
   query   = models.ManyToManyField('sb_Query')
-  tag     = models.ManyToManyField('sb_Tag')
   title   = models.TextField(null=True)
   content = models.TextField(null=True) 
   PY      = models.IntegerField(null=True,db_index=True)
-  users   = models.ManyToManyField(User, through='sb_DocOwnership')
     
   def __str__(self):
     return self.UT
 
   def word_count(self):
     return len(str(self.content).split())
-
-class sb_DocOwnership(models.Model):
-  doc      = models.ForeignKey(sb_Doc,   on_delete=models.CASCADE)
-  user     = models.ForeignKey(User,     on_delete=models.CASCADE, verbose_name="Reviewer")
-  query    = models.ForeignKey(sb_Query, on_delete=models.CASCADE)
-  tag      = models.ForeignKey(sb_Tag,   on_delete=models.CASCADE, null=True)
-  relevant = models.IntegerField(default=0, db_index=True, verbose_name="Relevance")
-
-  def __str__(self):
-    return self.doc
-
-class sb_DocAuthInst(models.Model):
-  doc         = models.ForeignKey('sb_Doc',null=True, verbose_name="Author - Document")
-  AU          = models.CharField(max_length=60, db_index=True, null=True, verbose_name="Author")
-  AF          = models.CharField(max_length=60, db_index=True, null=True, verbose_name="Author Full Name")
-  institution = models.CharField(max_length=150, db_index=True, verbose_name="Institution Name")
-  position    = models.IntegerField(verbose_name="Author Position")
-
-  def __str__(self):
-    return self.doc
-
-class sb_DocCites(models.Model):
-  doc       = models.ForeignKey('sb_Doc',null=True, related_name='doc')
-  reference = models.ForeignKey('sb_Doc',null=True, related_name='ref')
-
-  def __str__(self):
-    return self.doc
 
 #class sb_DocIsCitedBy(models.Model):
 #    doc      = models.ForeignKey('sb_Doc',null=True, related_name='doc')
